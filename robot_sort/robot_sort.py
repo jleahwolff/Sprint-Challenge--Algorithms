@@ -14,8 +14,7 @@ class SortingRobot:
         Returns True if the robot can move right or False if it's
         at the end of the list.
         """
-        #_item 
-        #if
+        #_position compared to length of the _list
 
         return self._position < len(self._list) - 1
 
@@ -99,8 +98,66 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        #how does this work----
+        # print(self.swap_item()) #picks up item...
+        # print(self._item) #shows whats in left
+        # print(self.move_right())
+        # print(self._item)
+        # print(self.swap_item)
+        # print(self._item)
+        # print(self.compare_item())
+        # print(self.move_left())
+        # print(self.compare_item())
+        #----------ok
+
+        #maybe ...
+        # compare_items
+        #move_right/left()
+        #set self.position = index location
+        #... ok
+
+        #///traverse list
+        # for robo in range(len(list), - 1, 0, -1):
+            #for i in range(robo)
+
+        #going to use: 
+            #set_light_off
+            #can_move_right
+            #swap_item
+            #move_right
+            #compare_item
+            #set_light_off
+
+        #is SortingRobot passed something?
+        # True?    
+        while True:
+            #set light to off, at start of each iteraiton
+            self.set_light_off()
+            #if we're not at the start of the list (can_move_right())
+            while self.can_move_right():
+                #pick up the item
+                self.swap_item()
+                #move to the right and then compare values
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.set_light_on()
+                    #then move the two items
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+            
+            #Break the while loop!!!!
+            #reset to the first loop
+            if not self.light_is_on():
+                break
+
+            #
+
+
+
+
+
 
 
 if __name__ == "__main__":

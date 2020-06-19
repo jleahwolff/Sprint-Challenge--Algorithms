@@ -98,6 +98,40 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+#     #from module assignment
+#     # TO-DO:  implement the Bubble Sort function below
+# def bubble_sort(arr):
+#     # Your code here
+#     #Set the loop to true, so it runs through at least once
+#     swapping = True
+#     #Now, while swapping:
+#     while swapping:
+#         #Set swapping to False so it breaks if there are no nums to iterate over
+#         swapping = False
+#         #iterate over the length of the array (minus one for indexing)
+#         for i in range(len(arr) - 1):
+#             # if the number i is > the next number in the array:
+#             if arr[i] > arr[i + 1]:
+#                 #Swap the numbers
+#                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
+#                 #Then restart the swapping
+#                 swapping = True
+#     return arr
+
+        #BUBBLE SORT
+        self.set_light_on()
+        while self.light_is_on():
+            self.set_light_off()
+            for i in range(len(self._list) - 1):
+                if self._list[i] > self._list[i + 1]:
+                    self._list[i], self._list[i+1] = self._list[i+1], self._list[i]
+                    self.set_light_on()
+        return self._list
+
+
+
+
+
         #how does this work----
         # print(self.swap_item()) #picks up item...
         # print(self._item) #shows whats in left
@@ -130,29 +164,34 @@ class SortingRobot:
 
         #is SortingRobot passed something?
         # True?    
-        while True:
-            #set light to off, at start of each iteraiton
-            self.set_light_off()
-            #if we're not at the start of the list (can_move_right())
-            while self.can_move_right():
-                #pick up the item
-                self.swap_item()
-                #move to the right and then compare values
-                self.move_right()
-                if self.compare_item() == 1:
-                    self.swap_item()
-                    self.set_light_on()
-                    #then move the two items
-                self.move_left()
-                self.swap_item()
-                self.move_right()
+        # while True:
+        #     #set light to off, at start of each iteraiton
+        #     self.set_light_off()
+        #     #if we're not at the start of the list (can_move_right())
+        #     while self.can_move_right():
+        #         #pick up the item
+        #         self.swap_item()
+        #         #move to the right and then compare values
+        #         self.move_right()
+        #         if self.compare_item() == 1:
+        #             self.swap_item()
+        #             self.set_light_on()
+        #             #then move the two items
+        #         self.move_left()
+        #         self.swap_item()
+        #         self.move_right()
             
-            #Break the while loop!!!!
-            #reset to the first loop
-            if not self.light_is_on():
-                break
+        #     #Break the while loop!!!!
+        #     #reset to the first loop
+        #         if not self.light_is_on():
+        #             break
 
-            #
+        #     #now... while we can move left
+        #     while self.can_move_left():
+        #         #keep onnnnn a movin'
+        #         self.move_left
+        #     #...
+            
 
 
 
